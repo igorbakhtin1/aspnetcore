@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using IgorForum.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using IgorForum.Service;
 
 namespace IgorForum
 {
@@ -38,6 +39,8 @@ namespace IgorForum
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddScoped<IForum, ForumService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

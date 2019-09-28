@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum", "IgorForum.csproj", "{F7692587-A1AB-4EDA-8E6F-28A8AC90865C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IgorForum.Data", "..\IgorForum.Data\IgorForum.Data.csproj", "{6B2BDBE3-2BB1-4FB6-91A7-35AC475DB88D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum.Data", "..\IgorForum.Data\IgorForum.Data.csproj", "{6B2BDBE3-2BB1-4FB6-91A7-35AC475DB88D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IgorForum.Service", "..\IgorForum.Service\IgorForum.Service.csproj", "{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6B2BDBE3-2BB1-4FB6-91A7-35AC475DB88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B2BDBE3-2BB1-4FB6-91A7-35AC475DB88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B2BDBE3-2BB1-4FB6-91A7-35AC475DB88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
