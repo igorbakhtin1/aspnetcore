@@ -9,6 +9,7 @@ using IgorForum.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IgorForum.Service;
+using IgorForum.Data.Models;
 
 namespace IgorForum
 {
@@ -38,9 +39,17 @@ namespace IgorForum
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddIdentityCore<ApplicationUser>()
+                .AddRoles<IdentityRole>()
+                .AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<ApplicationUser, IdentityRole>>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders()
+                .AddDefaultUI();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IForum, ForumService>();
+            services.AddScoped<IPost, PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

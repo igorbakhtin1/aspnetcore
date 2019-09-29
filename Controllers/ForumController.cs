@@ -40,12 +40,12 @@ namespace IgorForum.Controllers
             var forum = _forumService.GetById(id);
             var posts = forum.Posts;
 
-
             var postListings = posts.Select(post => new PostListingModel
             {
-                Id = post.ID,
+                Id = post.Id,
                 AuthorId = post.User.Id,
                 AuthorRating = post.User.Rating,
+                AuthorName = post.User.UserName,
                 Title = post.Title,
                 DatePosted = post.Created.ToString(),
                 RepliesCount = post.Replies.Count(),

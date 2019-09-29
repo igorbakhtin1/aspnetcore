@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum", "IgorForum.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum.Data", "..\IgorForum.Data\IgorForum.Data.csproj", "{6B2BDBE3-2BB1-4FB6-91A7-35AC475DB88D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IgorForum.Service", "..\IgorForum.Service\IgorForum.Service.csproj", "{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum.Service", "..\IgorForum.Service\IgorForum.Service.csproj", "{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

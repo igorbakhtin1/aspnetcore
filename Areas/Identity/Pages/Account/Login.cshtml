@@ -1,5 +1,7 @@
 ﻿@page
 @model LoginModel
+@using IgorForum.Data.Models
+@inject SignInManager<ApplicationUser> SignInManager
 
 @{
     ViewData["Title"] = "Log in";
