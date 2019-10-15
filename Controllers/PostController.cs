@@ -44,12 +44,15 @@ namespace IgorForum.Controllers
                 AuthorRating = post.User.Rating,
                 Created = post.Created,
                 PostContent = post.Content,
-                Replies = replies
+                Replies = replies,
+                ForumId = post.Forum.Id,
+                ForumName = post.Forum.Title,
+                IsAuthorAdmin = IsAuthorAdmin(post.User)
             };
 
             return View(model);
         }
-
+                
         public IActionResult Create(int id)
         {
             var forum = _forumService.GetById(id);
@@ -76,7 +79,13 @@ namespace IgorForum.Controllers
 
             // TODO: Implement User Rating Management
 
-            return RedirectToAction("Index", "Post",new { id = post.Id });
+            return RedirectToAction("Index", "Post", new { id = post.Id });
+        }
+
+        private bool IsAuthorAdmin(ApplicationUser user)
+        {
+            return _userManager.GetRolesAsync(user)
+                .Result.Contains("Admin");
         }
 
         private Post BuildPost(NewPostModel model, ApplicationUser user)
@@ -103,7 +112,8 @@ namespace IgorForum.Controllers
                 AuthorImageUrl = reply.User.ProfileImageUrl,
                 AuthorRating = reply.User.Rating,
                 Created = reply.Created,
-                ReplyContent = reply.Content
+                ReplyContent = reply.Content,
+                IsAuthorAdmin = IsAuthorAdmin(reply.User)
             });
         }
     }
