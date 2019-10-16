@@ -338,11 +338,11 @@ html {
     transition: ease-in 0.2s;
 }
 
-    .homeSearch:hover {
-        color: #03A9F4;
-        background-color: rgba(0, 0, 0, 0.7);
-        box-shadow: 0 5px 4px -6px #000;
-    }
+.homeSearch:hover {
+     color: #03A9F4;
+     background-color: rgba(0, 0, 0, 0.7);
+     box-shadow: 0 5px 4px -6px #000;
+}
 
 .homeSearch:focus {
     border: none !important;
