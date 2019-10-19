@@ -30,7 +30,7 @@ a.navbar-brand {
     padding: 8px 0 24px 24px;
 }
 
-.sectionHeading {
+#sectionHeading {
     color: white;
     font-size: 1.3em;
     font-family: 'Roboto';
@@ -163,6 +163,11 @@ a.navbar-brand {
     font-size: 0.9em;
     color: #159;
     font-family: 'Roboto Mono';
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
 }
 
 #headingBtn {
@@ -324,6 +329,11 @@ html {
   }
 }
 
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    text-align: center;
+}
 
 .homeSearch {
     width: 100%;
