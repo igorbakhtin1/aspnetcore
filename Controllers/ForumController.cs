@@ -4,6 +4,7 @@ using IgorForum.Models.Forum;
 using IgorForum.Models.Post;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace IgorForum.Controllers
@@ -13,9 +14,10 @@ namespace IgorForum.Controllers
         private readonly IForum _forumService;
         private readonly IPost _postService;
 
-        public ForumController(IForum forumService)
+        public ForumController(IForum forumService, IPost postService)
         {
             _forumService = forumService;
+            _postService = postService;
         }
 
         public IActionResult Index()
@@ -35,10 +37,12 @@ namespace IgorForum.Controllers
             return View(model);
         }
 
-        public IActionResult Topic(int id)
+        public IActionResult Topic(int id, string searchQuery)
         {
             var forum = _forumService.GetById(id);
-            var posts = forum.Posts;
+            var posts = new List<Post>();
+
+            posts = _postService.GetFilteredPosts(forum, searchQuery).ToList();
 
             var postListings = posts.Select(post => new PostListingModel
             {
@@ -77,6 +81,12 @@ namespace IgorForum.Controllers
                 Description = forum.Description,
                 ImageUrl = forum.ImageUrl
             };
+        }
+
+        [HttpPost]
+        public IActionResult Search(int id, string searchQuery)
+        {
+            return RedirectToAction("Topic", new { id, searchQuery });
         }
     }
 }
