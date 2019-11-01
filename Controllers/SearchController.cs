@@ -42,6 +42,8 @@ namespace IgorForum.Controllers
                 SearchQuery = searchQuery,
                 EmptySearchResults = areNoResults
             };
+
+            return View(model);
         }
 
         private ForumListingModel BuildForumListing(Post post)
