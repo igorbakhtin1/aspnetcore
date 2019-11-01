@@ -4,7 +4,6 @@ using IgorForum.Models.Forum;
 using IgorForum.Models.Post;
 using IgorForum.Models.Search;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Linq;
 
 namespace IgorForum.Controllers
