@@ -30,15 +30,6 @@ a.navbar-brand {
     padding: 8px 0 24px 24px;
 }
 
-#sectionHeading {
-    color: white;
-    font-size: 1.3em;
-    font-family: 'Roboto';
-    padding: 16px 0 16px 0;
-    border-bottom: 1px solid #335;
-    margin-bottom: 12px;
-}
-
 .sectionHeading {
     color: white;
     font-size: 1.3em;
@@ -60,6 +51,10 @@ a.navbar-brand {
     background-color: white;
 }
 
+.frontPageSubHeadint {
+    font-size: 2em;
+}
+
 .frontPageSplash {
     background-image: url("/images/theme/Moscow1.jpg");
     background-repeat: no-repeat;
@@ -70,7 +65,6 @@ a.navbar-brand {
     font-family: 'Roboto';
     padding: 12px 0 0 32px;
     height: 360px;
-    color: white;
 }
 
 .sectionDescription {
@@ -423,7 +417,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    padding: 0px 0 20px 0;
+    padding: 50px 0 20px 0;
     background-image: url("/images/theme/Moscow.jpg");
     background-color: black;
     background-size: 100%;
@@ -439,4 +433,32 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/* User Profile*/
+
+.userProfile {
+    padding: 32px 0 64px 24px;
+    background-color: #fff;
+}
+
+#userProfileImage {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+}
+
+#userEmailLabel, #userBioLabel, #userCreatedLabel, #userRating, #userActiveLabel {
+    display: block;
+    color: #444;
+    font-family: 'Roboto';
+    padding-top: 3px;
+}
+
+#userName {
+    display: block;
+    color: #2569d5;
+    font-family: 'Roboto';
+    font-size: 1.7em;
 }
