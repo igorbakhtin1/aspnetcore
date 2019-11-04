@@ -1,6 +1,7 @@
 ﻿using IgorForum.Data;
 using IgorForum.Data.Models;
 using IgorForum.Models.ApplicationUser;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace IgorForum.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -78,6 +80,7 @@ namespace IgorForum.Controllers
             return RedirectToAction("Detail", "Profile", new { id = userId });
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             var profiles = _userService.GetAll()

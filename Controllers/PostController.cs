@@ -6,6 +6,7 @@ using IgorForum.Data;
 using IgorForum.Data.Models;
 using IgorForum.Models.Post;
 using IgorForum.Models.Reply;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,7 +58,8 @@ namespace IgorForum.Controllers
 
             return View(model);
         }
-                
+
+        [Authorize]
         public IActionResult Create(int id)
         {
             var forum = _forumService.GetById(id);
@@ -74,6 +76,7 @@ namespace IgorForum.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddPost(NewPostModel model)
         {
             var userId = _userManager.GetUserId(User);

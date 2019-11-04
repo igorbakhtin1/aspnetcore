@@ -402,6 +402,27 @@ a.navbar-brand {
     font-size: 20px;
     line-height: 1.4;
 }
+
+.hasRecentPost {
+    padding: 2px;
+    background-color: #fe552f;
+    color: #fff;
+}
+
+#originalPost {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+.hasRecentPost {
+    padding: 2px;
+    background-color: #fe552f;
+    color: #fff;
+    text-align: center;
+    border-radius: 1px;
+    width: 90px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

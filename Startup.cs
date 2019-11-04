@@ -32,6 +32,15 @@ namespace IgorForum
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Default Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequiredLength = 8;
+            });
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -77,6 +86,7 @@ namespace IgorForum
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
 
             dataSeeder.SeedSuperUser();
 

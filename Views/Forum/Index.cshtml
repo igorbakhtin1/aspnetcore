@@ -1,21 +1,57 @@
 ﻿@model IgorForum.Models.Forum.ForumIndexModel
 
-<h1>Forums</h1>
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">Список форумов</div>
+        <div class="sectionDescription">
+            <p>Добро пожаловать в <strong>IgorForum </strong>. Общайся по интересующим тебя темам. Все темы разбиты по категориям для твоего удобства.</p>
+            <p>
+                Пожалуйста, прочитай правила перед публикацией.
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <span>Ты должен быть <a asp-controller="Account" asp-action="Register">зарегестрирован</a>, что создавать записи.</span>
+                }
+            </p>
+        </div>
+    </div>
 
-<table class="table table-hover" id="forumIndexTable">
-    <tbody>
-        @foreach (var forum in Model.ForumList)
-        {
-        <tr>
-            <td>
-                <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">
-                    @forum.Name
-                </a>
-            </td>
-            <td>
-                @forum.Description
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+    <div class="row" id="forumIndexContent">
+        <table class="table table-hover" id="forumIndexTable">
+            <tbody>
+                @foreach (var forum in Model.ForumList)
+                {
+                    <tr>
+                        <td>
+                            <div class="forumLogo" style="background-image: url(@forum.ImageUrl);"></div>
+                            <div class="forumData">
+                                <div class="forumTitle">
+                                    <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">@forum.Name</a>
+                                </div>
+                                <div class="forumSubTitle">
+                                    @if (forum.HasRecentPost)
+                                    {
+                                        <div class="hasRecentPost">Популярное</div>
+                                    }
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="forumPostCount">
+                                @forum.NumberOfPosts Записей
+                            </div>
+                            <div class="forumMemberCount">
+                                @forum.NumberOfUsers Пользователей
+                            </div>
+                        </td>
+                        <td>
+                            <div class="forumDescription">
+                                @forum.Description
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

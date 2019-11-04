@@ -2,6 +2,7 @@
 using IgorForum.Data.Models;
 using IgorForum.Models.Forum;
 using IgorForum.Models.Post;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -38,12 +39,16 @@ namespace IgorForum.Controllers
                 .Select(forum => new ForumListingModel {
                     Id = forum.Id,
                     Name = forum.Title,
-                    Description = forum.Description
+                    Description = forum.Description,
+                    NumberOfPosts = forum.Posts?.Count() ?? 0,
+                    NumberOfUsers = _forumService.GetActiveUsers(forum.Id).Count(),
+                    ImageUrl = forum.ImageUrl,
+                    HasRecentPost = _forumService.HasRecentPost(forum.Id)
             });
 
             var model = new ForumIndexModel
             {
-                ForumList = forums
+                ForumList = forums.OrderBy(f => f.Name)
             };
 
             return View(model);
@@ -77,30 +82,13 @@ namespace IgorForum.Controllers
             return View(model);
         }
 
-        private ForumListingModel BuildForumListing(Post post)
-        {
-            var forum = post.Forum;
-
-            return BuildForumListing(forum);
-        }
-
-        private ForumListingModel BuildForumListing(Forum forum)
-        {
-            return new ForumListingModel
-            {
-                Id = forum.Id,
-                Name = forum.Title,
-                Description = forum.Description,
-                ImageUrl = forum.ImageUrl
-            };
-        }
-
         [HttpPost]
         public IActionResult Search(int id, string searchQuery)
         {
             return RedirectToAction("Topic", new { id, searchQuery });
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             var model = new AddForumModel();
@@ -108,6 +96,20 @@ namespace IgorForum.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+        private CloudBlockBlob UploadForumImage(IFormFile file)
+        {
+
+            var connectionString = _configuration.GetConnectionString("AzureStorageAccount");
+            var container = _uploadService.GetBlobContainer(connectionString, "forum-images");
+            var contentDisposition = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
+            var filename = contentDisposition.FileName.Trim('"');
+            var blockBlob = container.GetBlockBlobReference(filename);
+            blockBlob.UploadFromStreamAsync(file.OpenReadStream()).Wait();
+
+            return blockBlob;
+        }
+
         public async Task<IActionResult> AddForum(AddForumModel model)
         {
             var imageUri = "/images/users/default.png";
@@ -130,17 +132,22 @@ namespace IgorForum.Controllers
             return RedirectToAction("Index", "Forum");
         }
 
-        private CloudBlockBlob UploadForumImage(IFormFile file)
+        private ForumListingModel BuildForumListing(Post post)
         {
-            
-            var connectionString = _configuration.GetConnectionString("AzureStorageAccount");         
-            var container = _uploadService.GetBlobContainer(connectionString, "forum-images");           
-            var contentDisposition = ContentDispositionHeaderValue.Parse(file.ContentDisposition);            
-            var filename = contentDisposition.FileName.Trim('"');        
-            var blockBlob = container.GetBlockBlobReference(filename);
-            blockBlob.UploadFromStreamAsync(file.OpenReadStream()).Wait();
+            var forum = post.Forum;
 
-            return blockBlob;
+            return BuildForumListing(forum);
+        }
+
+        private ForumListingModel BuildForumListing(Forum forum)
+        {
+            return new ForumListingModel
+            {
+                Id = forum.Id,
+                Name = forum.Title,
+                Description = forum.Description,
+                ImageUrl = forum.ImageUrl
+            };
         }
     }
 }
