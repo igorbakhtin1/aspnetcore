@@ -1,4 +1,34 @@
-﻿@page
-@model IgorForum.Views.Forum.CreateModel
-@{
-}
+﻿@model IgorForum.Models.Forum.AddForumModel
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">
+            Добавить новый форум
+        </div>
+    </div>
+    <div class="row">
+        <div id="createForumSection">
+            <form asp-action="AddForm" method="post" id="createForumForm" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title">Название форума</label>
+                    <input asp-for="Title" class="form-control" placeholder="Выберите название форума"/>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Описание форума</label>
+                    <input asp-for="Description" class="form-control" placeholder="Напишите пару слов о форуме" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div id="upload">
+                    <label>Загрузите фотографию</label>
+                    <br />
+                    <label class="btn btn-default btn-file">
+                        Выбрать <input asp-for="ImageUpload" typeof="file" style="display: none" />
+                    </label>
+                </div>
+                <button type="submit" id="newFormBtn" class="btn btn-submitPost">Создать форум</button>
+            </form>
+        </div>
+    </div>
+</div>
