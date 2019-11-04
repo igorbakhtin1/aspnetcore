@@ -5,6 +5,10 @@ for details on configuring this project to bundle and minify static web assets. 
     box-shadow: 0 5px 4px -6px #000;
 }
 
+ul.nav.navbar-nav {
+    float: right;
+}
+
 .navLogo {
     background-image: url("/images/theme/images.png");
     background-size: 100%;
@@ -95,6 +99,42 @@ a.navbar-brand {
     margin: 4px 0 16px 0;
 }
 
+/* Replies*/
+
+.replyContent {
+    display: table;
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+    width: inherit;
+}
+
+#postReplyRow {
+    background-color: #3F51B5;
+    padding: 8px;
+}
+
+.replyContentContainer, .replyAuthorContainer {
+    display: table-cell;
+    padding: 12px;
+}
+
+.isAdmin {
+    display: inline-block;
+    padding: 3px;
+    background-color: #FFEB3B;
+    color: #000;
+    font-family: 'Roboto Mono';
+}
+
+.smaller {
+    font-size: 0.8em;
+}
+
+#replyDivider {
+    height: 2px;
+    margin-bottom: 12px;
+}
+
 /* Sticky post styles
 -------------------------------------------------- */
 
@@ -130,6 +170,7 @@ a.navbar-brand {
     margin-right: 20px;
     height: 40px;
     width: 40px;
+    background-size: 100%;
     background-color: #ddd;
 }
 
@@ -266,6 +307,22 @@ a.navbar-brand {
     font: inherit;
 }
 
+/* User Profile Index*/
+
+.userProfilePic {
+    height: 140px;
+    width: 140px;
+    background-size: 100%;
+}
+
+#userProfileImage {
+    background-size: 100%;
+}
+
+.fillSquare {
+    background-size: 100%;
+}
+
 /* Forum Index */
 
 #forumIndexTable td {
@@ -298,6 +355,7 @@ a.navbar-brand {
 }
 
 .forumLogo {
+    background-size: 100%;
     border-radius: 3px;
     float: left;
     margin-right: 20px;
@@ -305,7 +363,6 @@ a.navbar-brand {
     width: 40px;
     background-color: #ddd;
     border: 1px solid #555;
-    background-size: 100%;
 }
 
 .forumPostCount {
@@ -355,16 +412,15 @@ html {
     font-size: 16px;
   }
 
-  .navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-  }
 }
 
 table {
     table-layout: fixed;
     word-wrap: break-word;
-    text-align: center;
+}
+
+.text-right {
+    
 }
 
 .homeSearch {
@@ -452,6 +508,7 @@ body {
     width: 200px;
     height: 200px;
     background-color: #ddd;
+    background-size: 100%;
 }
 
 #userEmailLabel, #userBioLabel, #userCreatedLabel, #userRating, #userActiveLabel {

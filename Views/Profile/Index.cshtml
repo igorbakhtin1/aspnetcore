@@ -1,4 +1,42 @@
-﻿@page
-@model IgorForum.Views.Profile.IndexModel
-@{
-}
+﻿@model IgorForum.Models.ApplicationUser.ProfileListModel
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">Просмотреть пользователей</div>
+    </div>
+    <div class="row" id="forumIndexContent">
+        <table class="table table-hover" id="userIndexTable">
+            <thead>
+                <tr>
+                    <th>Аватар</th>
+                    <th>Имя пользователя</th>
+                    <th>Электронная почта</th>
+                    <th>Зарегестрирован</th>
+                    <th>Рейтинг</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var profile in Model.Profiles)
+                {
+                    <tr class="userRow">
+                        <td>
+                            <div class="userProfilePic" style="background-image:url(@profile.ProfileImageUrl)"></div>
+                        </td>
+                        <td>
+                            @profile.UserName
+                        </td>
+                        <td>
+                            @profile.Email
+                        </td>
+                        <td>
+                            @profile.MemberSince
+                        </td>
+                        <td>
+                            @profile.UserRating
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
