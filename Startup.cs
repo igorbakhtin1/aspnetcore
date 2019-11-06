@@ -56,8 +56,7 @@ namespace IgorForum
                 .AddDefaultUI();
 
             services.AddTransient<DataSeeder>();
-
-
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IForum, ForumService>();
