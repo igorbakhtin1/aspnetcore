@@ -3,6 +3,9 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .navbar {
     box-shadow: 0 5px 4px -6px #000;
+    background-color: gray !important;
+    margin: 0 !important;
+    padding: 0px !important;
 }
 
 ul.nav.navbar-nav {
@@ -506,6 +509,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
 }
 .footer {
   position: absolute;

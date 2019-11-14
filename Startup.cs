@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IgorForum.Service;
 using IgorForum.Data.Models;
+using System;
 
 namespace IgorForum
 {

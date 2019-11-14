@@ -85,8 +85,6 @@ namespace IgorForum.Controllers
 
             await _postService.Add(post);
             await _userService.UpdateUserRating(userId, typeof(Post));
-            
-            // TODO: Implement User Rating Management
 
             return RedirectToAction("Index", "Post", new { id = post.Id });
         }
