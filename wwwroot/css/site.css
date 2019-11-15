@@ -4,8 +4,6 @@ for details on configuring this project to bundle and minify static web assets. 
 .navbar {
     box-shadow: 0 5px 4px -6px #000;
     background-color: gray !important;
-    margin: 0 !important;
-    padding: 0px !important;
 }
 
 ul.nav.navbar-nav {
@@ -18,11 +16,12 @@ ul.nav.navbar-nav {
     background-repeat: no-repeat;
     background-position: center;
     padding-right: 16px;
+    height: 25px;
     width: 150px;
-    margin-right: 12px;
+    margin-right: 25px;
 }
 
-a.navbar-brand {
+A.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -81,6 +80,7 @@ a.navbar-brand {
 .frontPageHeading {
     font-size: 3.2em;
     margin: 16px 0;
+    float: left;
 }
 
 .frontPageTopContainer {
@@ -436,6 +436,14 @@ html {
     font-size: 16px;
   }
 
+  frontPageHeading {
+      font-size: 2px;
+  }
+
+  navbar {
+
+  }
+
 }
 
 table {
@@ -502,7 +510,8 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    padding: 50px 0 20px 0;
+    margin: 0;
+    padding: 0 0 20px 0;
     background-image: url("/images/theme/Moscow.jpg");
     background-color: black;
     background-size: 100%;

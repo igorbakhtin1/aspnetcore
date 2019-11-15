@@ -30,7 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <header>
-        <nav class="navbar navbar-toggleable-md navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand navLogo" asp-controller="Home" asp-action="Index"></a>
@@ -88,7 +88,7 @@
                                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
                                       asp-route-returnUrl="@Url.Page("/", new { area = "" })"
                                       method="post">
-                                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                    <button type="submit" class="nav-link btn btn-link text-dark">Выйти</button>
                                 </form>
                             </li>
                         </ul>
