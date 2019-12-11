@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] IgorForum</title>
+    <title>@ViewData["Title"] IgorForum - Форум программирования</title>
 
     <environment include="Development, Production">
         <link rel="shortcut icon" href="~/favicon.ico" />
@@ -33,15 +33,15 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand navLogo" asp-controller="Home" asp-action="Index"></a>
+                    <a class="navbar-brand navLogo" asp-controller="Home" asp-action="Index">IgorForum</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a asp-controller="Forum" asp-action="Index">Форумы</a></li>
+                        <li><a asp-controller="Forum" style="color: #cdaf95;" asp-action="Index">Форумы</a></li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" style="color: #cdaf95;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     Настройки
                                     <span class="caret"></span>
                                 </a>
@@ -68,10 +68,10 @@
                     {
                         <ul class="navbar-nav ml-auto justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Зарегестрироваться</a>
+                                <a class="nav-link" style="color: #cdaf95;" asp-area="Identity" asp-page="/Account/Register">Зарегестрироваться</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Войти</a>
+                                <a class="nav-link" asp-area="Identity" style="color: #cdaf95;" asp-page="/Account/Login">Войти</a>
                             </li>
                         </ul>
                     }
@@ -79,7 +79,7 @@
                     {
                         <ul class="navbar-nav ml-auto justify-content-end">
                             <li class="nav-item">
-                                <a asp-controller="Profile" class="nav-link text-dark"
+                                <a asp-controller="Profile" class="nav-link" style="color: #cdaf95;"
                                    asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">
                                     @UserManager.GetUserName(User)
                                 </a>
@@ -88,7 +88,7 @@
                                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
                                       asp-route-returnUrl="@Url.Page("/", new { area = "" })"
                                       method="post">
-                                    <button type="submit" class="nav-link btn btn-link text-dark">Выйти</button>
+                                    <button type="submit" class="nav-link btn btn-link" style="color: #cdaf95;">Выйти</button>
                                 </form>
                             </li>
                         </ul>

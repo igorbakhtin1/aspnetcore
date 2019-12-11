@@ -3,7 +3,8 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .navbar {
     box-shadow: 0 5px 4px -6px #000;
-    background-color: gray !important;
+    background-color: #8b475d !important;
+    color: #cdaf95;
 }
 
 ul.nav.navbar-nav {
@@ -11,7 +12,6 @@ ul.nav.navbar-nav {
 }
 
 .navLogo {
-    background-image: url("/images/theme/images.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,9 +22,13 @@ ul.nav.navbar-nav {
 }
 
 A.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    padding-bottom: 35px;
+    color: #cdaf95;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 .navbar li {
@@ -62,7 +66,6 @@ A.navbar-brand {
 }
 
 .frontPageSplash {
-    background-image: url("/images/theme/Moscow1.jpg");
     background-repeat: no-repeat;
     background-position: right;
 }
@@ -91,7 +94,7 @@ A.navbar-brand {
 }
 
 .frontPageContent {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #fffdb9;
     padding: 16px;
 }
 
@@ -270,6 +273,7 @@ A.navbar-brand {
     width: 100%;
     background-color: #4FC3F7;
     transition: ease 0.3s;
+    margin-top: 10px;
 }
 
 .btn-file:hover {
@@ -512,8 +516,7 @@ body {
     /* Margin bottom by footer height */
     margin: 0;
     padding: 0 0 20px 0;
-    background-image: url("/images/theme/Moscow.jpg");
-    background-color: black;
+    background-color: peachpuff;
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;

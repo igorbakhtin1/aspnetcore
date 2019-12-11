@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Shared\_Layout1.cshtml" />
+    <Content Remove="wwwroot\images\theme\Moscow.jpg" />
     <Content Remove="wwwroot\images\theme\SSMAforAccess_8.4.0.msi" />
   </ItemGroup>
 

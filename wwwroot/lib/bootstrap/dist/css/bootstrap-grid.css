@@ -498,6 +498,7 @@ html {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
+    text-align: center;
   }
   .col-md-5 {
     -ms-flex: 0 0 41.666667%;
