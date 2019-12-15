@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum.Data", "..\IgorFo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IgorForum.Service", "..\IgorForum.Service\IgorForum.Service.csproj", "{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IgorForum.Tests", "..\IgorForum.Tests\IgorForum.Tests.csproj", "{5AFD173D-63DD-4EFF-876A-864BCABE6628}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C74A11E8-6974-42E3-A6CD-2B1208F9CBD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AFD173D-63DD-4EFF-876A-864BCABE6628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFD173D-63DD-4EFF-876A-864BCABE6628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFD173D-63DD-4EFF-876A-864BCABE6628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFD173D-63DD-4EFF-876A-864BCABE6628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
